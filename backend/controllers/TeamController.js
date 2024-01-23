@@ -1,6 +1,7 @@
 // FUNÇOES DAS ROTAS DOS TEAMS
 
 function getTeams( req, res ){
+    const query = 'select * from teams';
     console.log('getTeam')
 }
 

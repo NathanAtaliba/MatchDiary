@@ -18,3 +18,9 @@ Repositorio destinado para um projeto de um diario de torcedor
     - Remover Team [ NOT STARTED ]
     - Editar Team [ NOT STARTED ]
     - Buscar Team [ NOT STARTED ]
+
+## Frameworks e Bibliotecas utilizadas no projeto:
+
+    Frontend -> React
+    Backend -> Node.js, Express, 
+    Database -> PostgreeSql
