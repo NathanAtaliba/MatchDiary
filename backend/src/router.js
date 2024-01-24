@@ -9,7 +9,7 @@ router.post('/matchs', createMatch );
 router.delete('/matchs/:id', deleteMatch );
 router.put('/matchs/:id', updateMatch );
 
-// TEAMS ROUTES
+// TEAMS ROUTE
 router.get('/teams', getTeams );
 router.post('/teams', createTeam );
 router.delete('/teams/:id', deleteTeam );
