@@ -4,15 +4,15 @@ import { getTeams, createTeam, deleteTeam, updateTeam } from '../controllers/Tea
 const router = express.Router()
 
 // MATCHS ROUTES
-router.get('/matchs', getMatchs );
-router.post('/matchs', createMatch );
-router.delete('/matchs/:id', deleteMatch );
-router.put('/matchs/:id', updateMatch );
+router.get('/matchs/search', getMatchs );
+router.post('/matchs/create', createMatch );
+router.delete('/matchs/delete/:id', deleteMatch );
+router.put('/matchs/update/:id', updateMatch );
 
 // TEAMS ROUTE
-router.get('/teams', getTeams );
-router.post('/teams', createTeam );
-router.delete('/teams/:id', deleteTeam );
-router.put('/teams/:id', updateTeam );
+router.get('/teams/search', getTeams );
+router.post('/teams/create', createTeam );
+router.delete('/teams/delete/:id', deleteTeam );
+router.put('/teams/update/:id', updateTeam );
 
 export default router;
