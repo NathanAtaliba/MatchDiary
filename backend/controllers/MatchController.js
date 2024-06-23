@@ -2,9 +2,8 @@ import { pool } from "../database/db.js";
 // FUNÇOES DAS ROTAS DAS MATCHS
 
 async function getMatchs(req, res) {
-  const tableName = "Matchs";
-  
   try {
+    const tableName = "Matchs";
     const query = `SELECT * FROM "${tableName}"`;
     const client = await pool.connect();
     const result = await client.query(query);
@@ -19,11 +18,36 @@ async function getMatchs(req, res) {
 }
 
 function deleteMatch( req, res ){
-    console.log('deleteMatch')
+  const id = req.params.id;
+  const values = [id];
+  const query = `DELETE FROM "Matchs" WHERE id = $1;`
+  pool.query( query, values, function( err ){
+      if(err){
+          res.status(500).json(`Error to delete match: ${err}`)
+      }
+      else{
+          console.log(`Match deleted with successfully`)
+          res.status(200).json(`Match deleted with successfully`)
+      }
+  })
 }
 
 function updateMatch( req, res ){
-    console.log('updateMatch')
+  let id = req.params.id
+  let team_one = req.body.name
+  let team_two = req.body.photo_url
+  let score_team_one = req.body.name
+  let score_team_two = req.body.photo_url
+  
+  let values = [ team_one, team_two, score_team_one, score_team_two, id ]
+  const query = `UPDATE "Matchs" SET team_one = $1, team_two = $2, score_team_one = $3, score_team_two = $4 WHERE id = $5;`;
+  pool.query(query, values, function(err){
+      if(err){
+          return res.status(500).json(`Error to update match ${err}`)
+      }else{
+          return res.status(200).json(`Match updated with successfully`)
+      }
+  })
 }
 
 async function createMatch( req, res ){

@@ -19,11 +19,33 @@ async function getTeams(req, res) {
 
 
 function deleteTeam( req, res ){
-    console.log('deleteTeam')
+    const id = req.params.id;
+    const values = [id];
+    const query = `DELETE FROM "Teams" WHERE id = $1;`
+    pool.query( query, values, function( err ){
+        if(err){
+            res.status(500).json(`Error to delete team: ${err}`)
+        }
+        else{
+            console.log(`Team deleted with successfully`)
+            res.status(200).json(`Team deleted with successfully`)
+        }
+    })
 }
 
 function updateTeam( req, res ){
-    console.log('updateTeam')
+    let id = req.params.id
+    let name = req.body.name
+    let photo_url = req.body.photo_url
+    let values = [ name, photo_url, id ]
+    const query = `UPDATE "Teams" SET name = $1, photo_url = $2 WHERE id = $3;`;
+    pool.query(query, values, function(err){
+        if(err){
+            return res.status(500).json(`Error to update team ${err}`)
+        }else{
+            return res.status(200).json(`Team updated with successfully`)
+        }
+    })
 }
 
 async function createTeam( req, res ){
