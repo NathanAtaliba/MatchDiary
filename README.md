@@ -26,16 +26,16 @@ CREATE TABLE Teams (
 - Requisitos do CRUD de Match e CRUD de Team:
 
     Match:
-    - Adicionar Match [ NOT STARTED ]
-    - Remover Match [ NOT STARTED ]
-    - Editar Match [ NOT STARTED ]
-    - Buscar Match [ NOT STARTED ]
+    - Adicionar Match [ :ok: ]
+    - Remover Match [ :ok: ]
+    - Editar Match [ :ok: ]
+    - Buscar Match [ :ok: ]
 
     Team:
-    - Adicionar Team [ NOT STARTED ]
-    - Remover Team [ NOT STARTED ]
-    - Editar Team [ NOT STARTED ]
-    - Buscar Team [ NOT STARTED ]
+    - Adicionar Team [ :ok: ]
+    - Remover Team [ :ok: ]
+    - Editar Team [ :ok: ]
+    - Buscar Team [ :ok: ]
 
 ## Frameworks e Bibliotecas utilizadas no projeto:
 
